@@ -1,0 +1,57 @@
+.error {
+    color: orangered;
+    font-style: italic;
+}
+
+.btn{
+    margin: auto 50% auto 40% ;
+    background-color: #8888f6;
+}
+
+.container{
+
+}
+
+body{
+    background-image: url(ocean.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.tbl{
+    width: 400px;
+    height: 200px;
+    background: rgba(0,0,0,0.8);
+    margin: 15px auto;
+    padding: 10px 0;
+    color: #fff;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,0.5);
+}
+
+::placeholder{
+    color:#ccc;
+}
+
+.box{
+    margin: 15px auto;
+    width: 80%;
+    border-bottom: 1px solid #fff;
+}
+
+.box1{
+    margin: 15px auto;
+    width: 80%;
+}
+
+.box input{
+    width: 90%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.box1 input{
+    background: transparent;
+}

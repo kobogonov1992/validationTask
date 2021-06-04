@@ -1,0 +1,76 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="form.css">
+    <title>Person Form</title>
+</head>
+<body>
+<form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+    <div class="container">
+        <table  class="tbl">
+            <tr>
+                <td>
+                    <div class="box"><input type="text" th:field="*{name}" placeholder="Name" /></div>
+                </td>
+                <td th:if="${#fields.hasErrors('name')}" th:errorclass="error" th:errors="*{name}">Name Error</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="box"><input type="text" th:field="*{age}" placeholder="Age" /></div>
+                </td>
+                <td th:if="${#fields.hasErrors('age')}" th:errorclass="error" th:errors="*{age}">Age Error</td>
+            </tr>
+            <td>
+                <div class="box1"> Provided true information  <input type="checkbox" style="margin-left: 15px" th:field="*{providedInfo}" /></div>
+            </td>
+            <td th:if="${#fields.hasErrors('providedInfo')}" th:errorclass="error" title="Mark for marriage status" th:errors="*{providedInfo}">ProvidedInfo Error</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="box">   <input  type="text" th:field="*{email}" placeholder="Email" /></div>
+                </td>
+                <td th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}">Email Error</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="box"v> <input type="text" th:field="*{experience}" placeholder="Experience"/></div>
+                </td>
+                <td th:if="${#fields.hasErrors('experience')}"  th:errorclass="error" th:errors="*{experience}">Experience Error</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="box"> <input type="text" th:field="*{ipAddress}" placeholder="Ip Address"/> </div>
+                </td>
+                <td th:if="${#fields.hasErrors('ipAddress')}" th:errorclass="error" th:errors="*{ipAddress}">Ip Error</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="box">Carrier Start <input type="text" th:field="*{carierStart}" placeholder="Carrier Start" /></div>
+                </td>
+                <td th:if="${#fields.hasErrors('carierStart')}" th:errorclass="error" th:errors="*{carierStart}">Carrier Error</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="box">End Contract <input type="text" th:field="*{endContract}" placeholder="End Contract" /> </div>
+                </td>
+                <td th:if="${#fields.hasErrors('endContract')}" th:errorclass="error" th:errors="*{endContract}" title="Error" >EndContract Error</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="box"> Birth date <input type="text" th:field="*{birthday}" placeholder="Birth date" /></div>
+                </td>
+                <td th:if="${#fields.hasErrors('birthday')}" th:errorclass="error" th:errors="*{birthday}">Birthday Error</td>
+            </tr>
+            <tr>
+                <td> <button class="btn"  type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>

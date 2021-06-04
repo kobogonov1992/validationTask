@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Person Form</title>
+</head>
+
+<body>
+
+<div class="container text-center" >
+    <h2>Persons List</h2>
+
+    <table class="table table-secondary table-hover" id="table_index">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Provided Information</th>
+            <th scope="col">Email</th>
+            <th scope="col">Experience</th>
+            <th scope="col">Carier</th>
+            <th scope="col">End 0f Contract</th>
+            <th scope="col">birthday</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="personForm : ${persons}">
+            <td th:text="${personForm.name}"></td>
+            <td th:text="${personForm.age}"></td>
+            <td th:text="${personForm.providedInfo}"></td>
+            <td th:text="${personForm.email}"></td>
+            <td th:text="${personForm.experience}"></td>
+
+            <td th:text="${#dates.format(personForm.carierStart, 'yyyy-MM-dd')}" ></td>
+
+            <td th:text="${#dates.format(personForm.endContract, 'yyyy-MM-dd')}" ></td>
+
+            <td th:text="${#dates.format(personForm.birthday, 'yyyy-MM-dd')}" ></td>
+
+<!--            <td th:text="${#temporals.format(personForm.carierStart, 'yyyy-MM-dd')}" ></td>-->
+
+<!--            <td th:text="${#temporals.format(personForm.endContract, 'yyyy-MM-dd')}" ></td>-->
+
+<!--            <td th:text="${#temporals.format(personForm.birthday, 'yyyy-MM-dd')}" ></td>-->
+
+            <!--                    <td><a class="btn btn-primary btn-primary btn-large" th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>-->
+            <!--                    <td><a class="btn btn-primary btn-warning btn-large"  th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>-->
+        </tr>
+    </table>
+</div>
+
+</body>
+
+</html>
